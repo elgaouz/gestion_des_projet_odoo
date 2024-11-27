@@ -17,6 +17,6 @@ L’objectif est de saisir les différents coûts projet et d’avoir une situat
 Diagramme UML
 =============
 Le diagramme de classes suivant présente la structure du projet et les relations entre les entités principales :
-C:\Users\dell\odoo\static\Classe UML.png
+![Diagramme de classe  UML](C:/Users/dell/odoo/static/Classe UML.png)
 
 
