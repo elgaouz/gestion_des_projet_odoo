@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- List View -->
+        <record id="view_projet_list" model="ir.ui.view">
+            <field name="name">projet.list</field>
+            <field name="model">project.project</field>
+            <field name="arch" type="xml">
+                <list string="Projets">
+                    <field name="name"/>
+                    <field name="date_debut"/>
+                    <field name="date_fin"/>
+                    <field name="etat"/>
+                    <field name="total_cout"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_projet_form" model="ir.ui.view">
+            <field name="name">projet.form</field>
+            <field name="model">project.project</field>
+            <field name="arch" type="xml">
+                <form string="Projet">
+                    <header>
+                        <!-- Le bouton 'Terminer' qui appelle 'action_done' -->
+                        <button name="action_done" type="object" string="Terminer" class="oe_highlight"
+                                modifiers="{'invisible': [('etat', '!=', 'en_cours')]}"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="date_debut"/>
+                            <field name="date_fin"/>
+                            <field name="etat"/>
+                            <field name="total_cout" readonly="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_projet" model="ir.actions.act_window">
+            <field name="name">Projets</field>
+            <field name="res_model">project.project</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+         <!-- Menu Principal -->
+        <menuitem name="Mini Projet" 
+                  id="Mini_Projet_Menu_Root" 
+                  sequence="1"/>
+
+        <!-- Sous-menu Projets -->
+        <menuitem id="menu_projet" 
+                  name="Projets"
+                  parent="Mini_Projet_Menu_Root" 
+                  action="action_projet" 
+                  sequence="20"/>
+    </data>
+</odoo>

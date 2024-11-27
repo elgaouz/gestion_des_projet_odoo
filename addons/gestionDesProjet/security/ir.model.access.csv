@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_empprojet,access.empprojet,model_empprojet,base.group_user,1,1,1,1
+access_vehprojet,access.vehprojet,model_vehprojet,base.group_user,1,1,1,1
+access_prodprojet,access.prodprojet,model_prodprojet,base.group_user,1,1,1,1
+access_produit,access.produit,model_product_product,base.group_user,1,1,1,1
+access_employe,access.employe,model_hr_employee,base.group_user,1,1,1,1
+access_vehicule,access.vehicule,model_vehicule,base.group_user,1,1,1,1
+access_vehicule,access.projet,model_project_project,base.group_user,1,1,1,1
+

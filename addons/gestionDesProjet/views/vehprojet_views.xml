@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Vue Liste -->
+        <record id="view_vehprojet_list" model="ir.ui.view">
+            <field name="name">vehprojet.list</field>
+            <field name="model">vehprojet</field>
+            <field name="arch" type="xml">
+                <list string="Véhicules sur Projet">
+                    <field name="vehicule_id" string="Véhicule"/>
+                    <field name="projet_id" string="Projet"/>
+                    <field name="date_utilisation" string="Date d'utilisation"/>
+                    <field name="cout" string="Coût"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Vue Formulaire -->
+        <record id="view_vehprojet_form" model="ir.ui.view">
+            <field name="name">vehprojet.form</field>
+            <field name="model">vehprojet</field>
+            <field name="arch" type="xml">
+                <form string="Véhicules sur Projet">
+                    <sheet>
+                        <group>
+                            <field name="vehicule_id" string="Véhicule"/>
+                            <field name="projet_id" string="Projet"/>
+                            <field name="date_utilisation" string="Date d'utilisation"/>
+                            <field name="cout" string="Coût"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_vehprojet" model="ir.actions.act_window">
+            <field name="name">Véhicules sur Projet</field>
+            <field name="res_model">vehprojet</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <!-- Menu Principal -->
+        <menuitem name="Customized Project" id="Mini_Projet_Menu_Root" sequence="7" />
+
+        <!-- Sous-menu Véhicules sur Projet -->
+        <menuitem name="Véhicules sur Projet" id="vehprojet_menu" parent="Mini_Projet_Menu_Root" action="action_vehprojet" sequence="40" />
+    
+    </data>
+</odoo>

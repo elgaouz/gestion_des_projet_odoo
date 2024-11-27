@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Form View -->
+        <record id="view_prodprojet_form" model="ir.ui.view">
+            <field name="name">prodprojet.form</field>
+            <field name="model">prodprojet</field>
+            <field name="arch" type="xml">
+                <form string="Produits sur Projet">
+                    <sheet>
+                        <group>
+                            <field name="produit_id"/>
+                            <field name="projet_id"/>
+                            <field name="quantite"/>
+                            <field name="prix_unitaire"/>
+                            <field name="date_achat"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- List View -->
+        <record id="view_prodprojet_list" model="ir.ui.view">
+            <field name="name">prodprojet.list</field>
+            <field name="model">prodprojet</field>
+            <field name="arch" type="xml">
+                <list string="Produits sur Projets">
+                    <field name="produit_id"/>
+                    <field name="projet_id"/>
+                    <field name="quantite"/>
+                    <field name="prix_unitaire"/>
+                    <field name="date_achat"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_prodprojet" model="ir.actions.act_window">
+            <field name="name">Produits sur Projet</field>
+            <field name="res_model">prodprojet</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+          <!-- Menu Principal -->
+        <menuitem name="Mini Projet" id="Mini_Projet_Menu_Root" sequence="1" />
+
+        <!-- Sous-menu Produits sur Projet -->
+        <menuitem id="menu_prodprojet" name="Produits sur Projet"
+                  parent="Mini_Projet_Menu_Root" action="action_prodprojet" sequence="30" />
+    </data>
+</odoo>
