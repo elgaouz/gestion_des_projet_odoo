@@ -18,6 +18,6 @@ L’objectif est de saisir les différents coûts projet et d’avoir une situat
 Diagramme UML
 =============
 Le diagramme de classes suivant présente la structure du projet et les relations entre les entités principales :
-![Diagramme de classe  UML](static/Classe UML.png)
+![Diagramme de classe UML](static/Classe_UML.png)
 
 
